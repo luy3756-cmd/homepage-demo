@@ -1,1 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陆羽涵 · 个人主页</title>
+<meta name="description" content="陆羽涵，税务硕士在读，研究方向为企业税务合规计划与风险管理。">
+<style>
+  :root {
+    --cream: #FBF8F2;
+    --cream-deep: #F4EFE5;
+    --card: #FFFFFF;
+    --blue: #4A7FA5;
+    --blue-deep: #335C79;
+    --blue-soft: #E7F0F7;
+    --blue-line: #D3E3EF;
+    --ink: #2E3A42;
+    --ink-soft: #64727C;
+    --radius: 16px;
+    --shadow: 0 2px 4px rgba(51, 92, 121, .04), 0 10px 30px rgba(51, 92, 121, .07);
+    --shadow-hover: 0 4px 8px rgba(51, 92, 121, .06), 0 18px 42px rgba(51, 92, 121, .13);
+  }
 
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+                 "Microsoft YaHei", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 22px;
+  }
+
+  a { color: var(--blue); }
+
+  /* ---------- 顶部 ---------- */
+  header {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(168deg, var(--blue-soft) 0%, var(--cream) 62%);
+    border-bottom: 1px solid var(--blue-line);
+    padding: 72px 0 60px;
+  }
+
+  header::after {
+    content: "";
+    position: absolute;
+    top: -180px;
+    right: -140px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, .85), rgba(255, 255, 255, 0));
+    pointer-events: none;
+  }
+
+  .hero {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .avatar {
+    flex: 0 0 auto;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(150deg, var(--blue) 0%, var(--blue-deep) 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 26px rgba(51, 92, 121, .26);
+    user-select: none;
+    overflow: hidden;
+  }
+
+  .hero h1 {
+    margin: 0 0 6px;
+    font-size: 40px;
+    line-height: 1.25;
+    letter-spacing: 3px;
+    color: var(--blue-deep);
+    font-weight: 600;
+  }
+
+  .hero .role {
+    margin: 0;
+    font-size: 17px;
+    color: var(--blue);
+    letter-spacing: .5px;
+  }
+
+  .hero .tagline {
+    margin: 12px 0 0;
+    font-size: 15px;
+    color: var(--ink-soft);
+    max-width: 46em;
+  }
+
+  .chips {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .chip {
+    font-size: 13px;
+    line-height: 1;
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .78);
+    border: 1px solid var(--blue-line);
+    color: var(--blue-deep);
+    white-space: nowrap;
+  }
+
+  /* ---------- 通用区块 ---------- */
+  main { padding: 56px 0 40px; }
+
+  section { margin-bottom: 56px; }
+
+  .sec-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 22px;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--blue-deep);
+  }
+
+  .sec-title::before {
+    content: "";
+    width: 5px;
+    height: 20px;
+    border-radius: 3px;
+    background: var(--blue);
+  }
+
+  /* ---------- 简介 ---------- */
+  .about {
+    background: var(--card);
+    border: 1px solid var(--blue-line);
+    border-radius: var(--radius);
+    padding: 30px 32px;
+    box-shadow: var(--shadow);
+  }
+
+  .about p { margin: 0 0 14px; color: var(--ink); }
+  .about p:last-of-type { margin-bottom: 0; }
+  .about strong { color: var(--blue-deep); font-weight: 600; }
+
+  .facts {
+    list-style: none;
+    margin: 22px 0 0;
+    padding: 20px 0 0;
+    border-top: 1px dashed var(--blue-line);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px 24px;
+  }
+
+  .facts li {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+  }
+
+  .facts li span {
+    display: block;
+    font-size: 12.5px;
+    letter-spacing: 1px;
+    color: var(--blue);
+    margin-bottom: 2px;
+  }
+
+  /* ---------- 项目卡片 ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    gap: 22px;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--blue-line);
+    border-radius: var(--radius);
+    padding: 26px 24px 24px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue) 0%, #8FB8D4 100%);
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: #BFD8E9;
+  }
+
+  .card .icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--blue-soft);
+    color: var(--blue-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    margin-bottom: 16px;
+  }
+
+  .card h3 {
+    margin: 0 0 4px;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .8px;
+    color: var(--blue-deep);
+  }
+
+  .card .sub {
+    margin: 0 0 14px;
+    font-size: 12.5px;
+    letter-spacing: 1.2px;
+    color: var(--blue);
+    text-transform: uppercase;
+  }
+
+  .card p {
+    margin: 0 0 18px;
+    font-size: 14.8px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+
+  .card ul {
+    margin: 0 0 18px;
+    padding: 0;
+    list-style: none;
+    font-size: 14.2px;
+    color: var(--ink);
+  }
+
+  .card ul li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 7px;
+  }
+
+  .card ul li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: .72em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #A9CBE2;
+  }
+
+  .tags {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid #EEF3F7;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .tags span {
+    font-size: 12.5px;
+    line-height: 1;
+    padding: 6px 11px;
+    border-radius: 8px;
+    background: var(--cream-deep);
+    color: var(--blue-deep);
+    white-space: nowrap;
+  }
+
+  /* ---------- 联系方式 ---------- */
+  .contact {
+    background: var(--card);
+    border: 1px solid var(--blue-line);
+    border-radius: var(--radius);
+    padding: 30px 32px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .contact .text {
+    min-width: 220px;
+  }
+
+  .contact .text p {
+    margin: 0;
+    font-size: 14.8px;
+    color: var(--ink-soft);
+  }
+
+  .contact .label {
+    display: block;
+    font-size: 12.5px;
+    letter-spacing: 1.5px;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+
+  .mail {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    color: var(--blue-deep);
+    text-decoration: none;
+    padding: 13px 22px;
+    border-radius: 999px;
+    background: var(--blue-soft);
+    border: 1px solid var(--blue-line);
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    word-break: break-all;
+  }
+
+  .mail:hover,
+  .mail:focus-visible {
+    background: #DCEAF5;
+    border-color: #BFD8E9;
+    transform: translateY(-2px);
+  }
+
+  .mail svg { flex: 0 0 auto; }
+
+  /* ---------- 页脚 ---------- */
+  footer {
+    border-top: 1px solid var(--blue-line);
+    background: var(--cream-deep);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    letter-spacing: .5px;
+  }
+
+  /* ---------- 手机端 ---------- */
+  @media (max-width: 640px) {
+    body { font-size: 15.5px; }
+
+    header { padding: 46px 0 38px; }
+
+    .hero {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .avatar {
+      width: 76px;
+      height: 76px;
+      font-size: 27px;
+    }
+
+    .hero h1 { font-size: 29px; letter-spacing: 2px; }
+    .hero .role { font-size: 15.5px; }
+    .hero .tagline { font-size: 14.5px; }
+
+    main { padding: 38px 0 26px; }
+    section { margin-bottom: 40px; }
+
+    .sec-title { font-size: 19px; margin-bottom: 18px; }
+
+    .about { padding: 24px 20px; }
+    .facts { grid-template-columns: 1fr; gap: 12px; }
+
+    .cards { grid-template-columns: 1fr; gap: 18px; }
+    .card { padding: 22px 20px 20px; }
+    .card h3 { font-size: 18px; }
+
+    .contact { padding: 24px 20px; flex-direction: column; align-items: stretch; }
+    .mail { width: 100%; justify-content: center; font-size: 15.5px; padding: 14px 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .card, .mail { transition: none; }
+    .card:hover, .card:focus-within, .mail:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hero">
+    <div class="avatar" aria-hidden="true">陆</div>
+    <div>
+      <h1>陆羽涵</h1>
+      <p class="role">税务硕士在读</p>
+      <p class="tagline">研究方向为企业税务合规计划与风险管理，关注如何在合规前提下设计税务安排、识别并控制涉税风险。</p>
+      <div class="chips">
+        <span class="chip">企业税务合规</span>
+        <span class="chip">风险管理</span>
+        <span class="chip">中国税制</span>
+        <span class="chip">税收理论与政策</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <h2 class="sec-title">简介</h2>
+    <div class="about">
+      <p>
+        你好，我是<strong>陆羽涵</strong>，目前就读于税务硕士项目，研究方向为
+        <strong>企业税务合规计划与风险管理</strong>。我关注企业在多税种、多环节经营背景下，
+        如何把税务合规前置到业务决策中——既包括税收优惠的合规适用与税务安排的设计，
+        也包括涉税风险的识别、评估与内控应对。
+      </p>
+      <p>
+        在课程学习之外，我倾向于把制度条文放回到真实业务里去检验：一项税务处理方案在
+        发票、申报、留存备查资料等环节是否闭环，风险点究竟出现在交易结构、会计处理还是
+        征管衔接上。我相信扎实的税制功底加上清晰的合规流程，才是税务风险管理的基础。
+      </p>
+      <ul class="facts">
+        <li><span>研究方向</span>企业税务合规计划与风险管理</li>
+        <li><span>在读学位</span>税务硕士（MT）</li>
+        <li><span>常用工具</span>Excel · Stata · 财务与税务软件</li>
+        <li><span>关注议题</span>税务内控 · 涉税风险识别</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="sec-title">课程项目</h2>
+    <div class="cards">
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">01</div>
+        <h3>中国税制</h3>
+        <p class="sub">China's Tax System</p>
+        <p>系统梳理现行税种结构，并以增值税、企业所得税为重点，分析征管流程中的合规要点。</p>
+        <ul>
+          <li>梳理主要税种的税制要素与申报缴纳流程</li>
+          <li>分析税收优惠的适用条件与留存备查要求</li>
+          <li>结合案例讨论发票管理与纳税调整事项</li>
+        </ul>
+        <div class="tags">
+          <span>增值税</span><span>企业所得税</span><span>税收征管</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">02</div>
+        <h3>税收理论与政策</h3>
+        <p class="sub">Tax Theory &amp; Policy</p>
+        <p>从税收原则出发理解政策设计逻辑，比较不同政策工具在效率与公平之间的取舍。</p>
+        <ul>
+          <li>梳理税收原则与税负转嫁、超额负担理论</li>
+          <li>比较减税降费政策的适用口径与实施效果</li>
+          <li>评估税收政策对企业投资与经营决策的影响</li>
+        </ul>
+        <div class="tags">
+          <span>税负转嫁</span><span>税收原则</span><span>政策评估</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icon" aria-hidden="true">03</div>
+        <h3>经济学分析与应用</h3>
+        <p class="sub">Economic Analysis &amp; Application</p>
+        <p>运用微观经济学与实证工具分析税收问题，为政策与实务判断提供数据支撑。</p>
+        <ul>
+          <li>推导税负在供需双方之间的转嫁比例</li>
+          <li>基于公开统计数据完成描述性与回归分析</li>
+          <li>用成本收益视角评估企业税务方案的取舍</li>
+        </ul>
+        <div class="tags">
+          <span>微观分析</span><span>成本收益</span><span>实证分析</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="sec-title">联系方式</h2>
+    <div class="contact">
+      <div class="text">
+        <span class="label">EMAIL</span>
+        <p>欢迎就税务合规与风险管理相关话题交流，邮件我会尽快回复。</p>
+      </div>
+      <a class="mail" href="mailto:3076084557@qq.com">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect>
+          <path d="M3 7l9 6 9-6"></path>
+        </svg>
+        3076084557@qq.com
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">陆羽涵 · 税务硕士在读 · 个人主页</div>
+</footer>
+
+</body>
+</html>
